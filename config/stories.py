@@ -37,6 +37,7 @@ stories = {
     'ro_rang' : {
         'name':'ro_rang',
         'url':'https://metruyencv.com/truyen/ro-rang-la-sinh-hoat-ky-nang-nguoi-lai-luyen-thanh-than-ky/chuong',
+        'url_truyenconvert':'https://truyenconvert.net/doc-truyen/chuong-202-dai-cao-ty-thi-1-30509',
         'image_path':'./ro_rang.png'
     },
     'ta_la_nguoi_tot':{
@@ -48,5 +49,16 @@ stories = {
         'name':'quai_thu',
         'url_metruyencv':'https://metruyencv.com/truyen/quy-di-khoi-phuc-ta-co-the-hoa-than-dai-yeu/chuong',
         'image_path':'./image/quai_thu.png'
+    },
+    'bai_gia_tu':{
+        'name':'bai_gia_tu',
+        'url_sangtacviet':'https://sangtacviet.vip/truyen/69shu/1/33706/23819840/',
+        'url_truyentiki': 'https://truyentiki.net/bai-gia-tu-tieu-dao-nhan-sinh.35834/chuong-1/',
+        'image_path':'./bai_gia_tu.png'
+    },
+    'chien_tranh_co_khi':{
+        'name':'chien_tranh_co_khi',
+        'url_qianyege':'https://www.qianyege.com/72/72877/41733033.html',
+        'image_path':'./image/chien_tranh_co_khi_img.png'
     }
 }

@@ -2,8 +2,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+
 def get_text(driver,web_config):
-    time.sleep(1)
     wait = WebDriverWait(driver, 10)
     # Lấy nội dung của một phần tử
     name_chap = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, web_config['name_chap']))).text

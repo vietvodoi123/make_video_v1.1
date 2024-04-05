@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.support.ui import Select
 import os
-
+from  services.text.translate import translate_text
 def init_tts(driver):
     try:
         cookie_alert = WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CLASS_NAME, "cookiealert")))
@@ -24,14 +24,14 @@ def init_tts(driver):
 
 
 
-def get_audio(driver):
+def get_audio(driver,trans):
     print('get audio')
     driver.get('https://text-to-speech.online/')
     init_tts(driver)
 
     input_field1 = driver.find_element(By.ID, 'text')
     # Đường dẫn tương đối
-    relative_path = "./text"
+    relative_path = "./text_cut"
 
     # Chuyển đổi đường dẫn tương đối thành đường dẫn tuyệt đối
     absolute_path = os.path.abspath(relative_path)
@@ -48,6 +48,7 @@ def get_audio(driver):
             file_path = os.path.join(absolute_path, file_name)
             print("Processing file:", file_path)
             start_time = time.time()
+
             with open(file_path, "r", encoding="utf-8") as file:
                 lines = file.readlines()
                 input_field1.clear()
@@ -88,5 +89,7 @@ def get_audio(driver):
                 print(f"Tệp '{file_path}' đã được xóa thành công.")
             else:
                 print(f"Tệp '{file_path}' không tồn tại.")
+
+        print('time break rate limit')
     print('finish get audio')
     driver.quit()

@@ -1,18 +1,17 @@
+import json
+
 from pydub import AudioSegment
 from moviepy.editor import *
 
-def make_video(start_chapter,arr_count_file_mp3,path_to_image,path_to_save_mp3,output_video_folder,number_chapter_in_video):
-    # /////////////////////////////////////////
-    # chuyen audio thanh video
-    # /////////////////////////////////////////
-    if not arr_count_file_mp3:
-        print("Không timf thấy mảng arr_count_file_mp3")
-        arr_count_file_mp3=[]
-        
-        with open('arr_count_file_mp3.txt','r') as file:
-            lines = file.readlines();
-            for line in lines:
-                arr_count_file_mp3.append(int(line))
+def make_video(start_chapter,path_to_image,path_to_save_mp3,output_video_folder,number_chapter_in_video):
+    # Kiểm tra và tạo thư mục nếu nó không tồn tại
+    if not os.path.exists(output_video_folder):
+        os.makedirs(output_video_folder)
+
+
+    with open('arr_count_file_mp3.json','r', encoding="utf-8") as file:
+        arr_count_file_mp3 = json.load(file)
+
     print('đọc file arr_count_file_mp3')
     print(arr_count_file_mp3)
     
