@@ -1,0 +1,26 @@
+Hương dẫn sử dụng
+Hướng dẫn sử dụng của các file sẽ được ghi trong từng file
+
+cấu trúc dự án:
+---. root
+    ---. config:        file cấu hình: truyện, web, chrome, đường dẫn
+    ---. services:      các file tác vụ
+    ---. text:          chứa các file text vừa lấy trên web về ( tiếng trung nếu là lấy ở web trung )
+    ---. text_trans:    chứa các file đuược dịch từ tiếng trung ra
+    ---. text_cut:      chứa các file cắt ra từ folder text hoặc folder text_trans -> cắt ra để thuận tiện cho việc chuyển thành audio
+    ---. audio_text:    chứa các file mp3 được ghép từ nhiều file mp3 khác
+    ---. image:         chứa các ảnh
+    ---. main.py:       là file chạy code
+
+    ---. arr_count_file_mp3.json:    chứa giá trị biến arr_count_file_mp3
+
+    ---. các file còn lại mặc kệ đi
+
+-----------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------
+Nói sơ qua cách hoạt động: lấy text từ web -> dịch nếu cần -> cắt ra để tiện làm audio -> chuển audio -> tạo video -> xóa các file, giải phóng bộ nhớ
+
+Web truyện --> save_text() ( hàm lâấy text )  --> translate() (hàm này sẽ chạy nếu cài đặt web có dịch) --> cut_file() --> get_audio() --> make_video() --> delete_file()
+

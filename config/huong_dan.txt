@@ -1,0 +1,66 @@
+
+----------------
+caì đặt đường dẫn:
+
+path_to_save_mp3_base:  đương dẫn đến chỗ lưu file mp3
+output_video_folder_base:   đuường dẫn ến chỗ luwu video
+path_save_trans:    noơi lưu các chương đầy đủ chưa ắt của các bản dịch
+
+*Lưu ý: phải tạo các folder đó trước
+
+        ví dụ: output_video_folder_base = r'D:\truyen' thì phải tạo folder truyen trong ổ D trước
+
+---------------------------
+cài dđặt trang web lấy truyêện:
+
+nó sẽ có dạng:
+
+'qianyege':{
+        'name':'qianyege',
+        'name_chap': 'h1',
+        'content_chap': '#content',
+        'btn_next': {
+            'elm':True
+        },
+        'trans':True
+    },
+
+'qianyege':     là key để sử dụng trong file main
+name:           'tên trang'
+name_chap:      là class, id, tên ther chưa nội dung tên chương
+                ví dụ: <a id='name_chap'>chương.....</a> hoăặc <h1>chương...</h1>
+
+content_chap:   lấy như name_chap
+
+btn_next:       nếu các trang có đường dẫn
+trans:          True nếu cần diịch, ko thì ko câần thêm vào
+
+lấy nội dung truyện sau đó chuyển sang chap khác thì có 2 kiểu bởi vì các trang web có kiểu khác nhau:
+1. lấy theo link để chuyển chap
+2.  âấn nuts bấm để chuyển chap
+
+- kiểu 1 thì cài đặt web đơn giản hơn. ko cần cài đặt btn_next
+- kiểu 2 cần cài đặt btn_next:
+    +   btn_next sẽ có 2 loại:
+        +   elm:    dùng cho các trang nút chuyển trang ko có Id, giờ chỉ dùng cho trang qianyege
+        +   css_selector:   dùng cho các trang có id, class cụ thể
+
+
+------------------------------------
+cài đặt truyện
+
+'chien_tranh_co_khi':{
+        'name':'chien_tranh_co_khi',
+        'url_qianyege':'https://www.qianyege.com/72/72877/41733033.html',
+        'image_path':'./image/chien_tranh_co_khi_img.png'
+    }
+
+'chien_tranh_co_khi':       tên truyện
+name:                       tên truyện nốt
+image_path:                 đường đẫn đến ảnh,
+url_{tên trang}:            lấy truyện ở trang nào thì thêm tên trang vào cuối ví dụ: url_qianyege
+                            cái này cũng như nút bấm có 2 loại:
+                                +   1. ko cần nhấn btn_next. -> chỉ cần nhập 1 phát thôi
+                                    ví dụ:  'url_metruyencv':'https://metruyencv.com/truyen/quy-di-khoi-phuc-ta-co-the-hoa-than-dai-yeu/chuong'
+
+                                +   2. cần nhấn btn_next. -> mỗi lần làm cần thay đổi đến chuơng bắt đầu
