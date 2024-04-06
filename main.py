@@ -44,15 +44,15 @@ def main(web_config, truyen, start_chapter=1, end_chapter=21, number_chapter_in_
         driver = webdriver.Chrome(options=options)
         translate_text(driver,truyen['name'])
 
-    cut_and_save_files(trans,number_chapter_in_video)
+    # # cut_and_save_files(trans,number_chapter_in_video)
+    #
+    # # #lay audio
+    # # driver = webdriver.Chrome(options=options)
+    # # get_audio(driver,trans)
+    # make_video(1,truyen['image_path'],path_to_save_mp3,output_video_folder,number_chapter_in_video)
+    #
+    # dele_mp3(path_to_save_mp3)
 
-    # #lay audio
-    driver = webdriver.Chrome(options=options)
-    get_audio(driver,trans)
-    make_video(1,truyen['image_path'],path_to_save_mp3,output_video_folder,number_chapter_in_video)
-
-    dele_mp3(path_to_save_mp3)
 
 
-
-main(web['qianyege'], stories['chien_tranh_co_khi'], 1,21,10)
+main(web['qianyege'], stories['chien_tranh_co_khi'], 1,2,10)

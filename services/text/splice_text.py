@@ -1,5 +1,4 @@
 import re
-from deep_translator import GoogleTranslator
 
 def convert_to_bmp(text):
     bmp_text = ""

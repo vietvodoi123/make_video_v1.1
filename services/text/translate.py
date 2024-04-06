@@ -12,17 +12,17 @@ def translate_text(driver,name):
 
     # Đường dẫn đến thư mục bạn muốn tạo
     text_trans_path = './text_trans'
-
+    #
     # Tạo thư mục nếu nó chưa tồn tại
     if not os.path.exists(text_trans_path):
         os.makedirs(text_trans_path)
 
-    # Đường dẫn đến thư mục bạn muốn tạo
-    save_text_trans_path = rf'{path_save_trans}/{name}'
-    cnt = len(os.listdir(save_text_trans_path))
-    # Tạo thư mục nếu nó chưa tồn tại
-    if not os.path.exists(save_text_trans_path):
-        os.makedirs(save_text_trans_path)
+    # # Đường dẫn đến thư mục bạn muốn tạo
+    # save_text_trans_path = rf'{path_save_trans}/{name}'
+    # cnt = len(os.listdir(save_text_trans_path))
+    # # Tạo thư mục nếu nó chưa tồn tại
+    # if not os.path.exists(save_text_trans_path):
+    #     os.makedirs(save_text_trans_path)
 
     relative_path = "./text"
     absolute_path = os.path.abspath(relative_path)
@@ -61,11 +61,11 @@ def translate_text(driver,name):
             with open(file_path, "w", encoding="utf-8") as file:
                 file.write(div.text)
 
-            save_trans = os.path.join(save_text_trans_path,f'chapter_{cnt+1}.txt')
-            # Mở tệp và ghi vào nó
-            with open(save_trans, "w", encoding="utf-8") as file:
-                file.write(div.text)
-                cnt += 1
+            # save_trans = os.path.join(save_text_trans_path,f'chapter_{cnt+1}.txt')
+            # # Mở tệp và ghi vào nó
+            # with open(save_trans, "w", encoding="utf-8") as file:
+            #     file.write(div.text)
+            #     cnt += 1
 
             print(f'save thành công {file_path}')
         text_area.clear()
